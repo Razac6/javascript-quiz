@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Javascript quiz</string>
+    <string name="answerA">true</string>
+    <string name="answerA2">undefined</string>
+    <string name="answerA3">true</string>
+    <string name="answerB">false</string>
+    <string name="answerB2">number</string>
+    <string name="answerB3">false</string>
+    <string name="answerC">ReferenceError</string>
+    <string name="answerC2">function</string>
+    <string name="answerC3">TypeError</string>
+    <string name="question1">What is printed in the console?</string>
+    <string name="question2">What does the above alert?</string>
+    <string name="question3">What is the result?</string>
+    <string name="question1Code">var foo = function foo()\n
+        \n{ console.log(foo === foo);\n
+        };\n foo();</string>
+    <string name="question2Code">function aaa()\n {\nreturn\n{\ntest: 1\n};\n}\nalert(typeof aaa());</string>
+    <string name="question3Code">Number("1") - 1 == 0;</string>
+</resources>
