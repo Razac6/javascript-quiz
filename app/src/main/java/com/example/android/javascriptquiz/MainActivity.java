@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -17,43 +19,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     RadioGroup radioGroup;
-
-    public static final String Q1 = "Question 1";
-    public static final String Q2 = "Question 2";
-    public static final String Q3 = "Question 3";
+    public Integer score = 0;
 
     public void checkAnswer(View view) {
+        EditText textInput = (EditText) findViewById(R.id.plain_text_input);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup2);
-        RadioButton question1Answer1 = (RadioButton) findViewById(R.id.question1Answer1);
-        RadioButton question1Answer2 = (RadioButton) findViewById(R.id.question1Answer2);
-        RadioButton question1Answer3 = (RadioButton) findViewById(R.id.question1Answer3);
+        RadioButton question2Answer1 = (RadioButton) findViewById(R.id.question1Answer1);
+        CheckBox checkbox1Answer1 = (CheckBox) findViewById(R.id.chkIos);
+        CheckBox checkbox2Answer2 = (CheckBox) findViewById(R.id.chkIos2);
+        CheckBox checkbox3Answer3 = (CheckBox) findViewById(R.id.chkIos3);
 
-        String success = "Yea success! :)";
-        String Wrong = "Wrong answer ";
+        if (textInput.getText().toString().equals("2")) {
+            setPoint(1);
+        }
 
-        boolean question1Answer1Checked = question1Answer1.isChecked();
-        boolean question1Answer2Checked = question1Answer2.isChecked();
-        boolean question1Answer3Checked = question1Answer3.isChecked();
+        if (question2Answer1.isChecked()) {
+            setPoint(1);
+        }
 
-        if (!question1Answer1Checked) {
-            toaster(Wrong + Q1);
+        if (checkbox1Answer1.isChecked() && !checkbox2Answer2.isChecked() && !checkbox3Answer3.isChecked()) {
+            setPoint(1);
         }
-        if (!question1Answer2Checked) {
-            toaster(Wrong + Q2);
-        }
-        if (!question1Answer3Checked) {
-            toaster(Wrong + Q3);
-        } else if (question1Answer1Checked && question1Answer2Checked && question1Answer3Checked) {
-            toaster(success);
-        }
+        toaster("Your score: " + score.toString());
     }
 
-    public void toaster(String question) {
+    public Integer setPoint(Integer point) {
+        return score = score + point;
+    }
+
+    public Integer resetScore() {
+        return score = 0;
+    }
+
+    public void toaster(String result) {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, question, duration);
+        Toast toast = Toast.makeText(context, result, duration);
         toast.show();
+        resetScore();
     }
 
 }
