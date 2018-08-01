@@ -24,20 +24,20 @@ public class MainActivity extends AppCompatActivity {
     public void checkAnswer(View view) {
         EditText textInput = (EditText) findViewById(R.id.plain_text_input);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        RadioButton question2Answer1 = (RadioButton) findViewById(R.id.question1Answer1);
-        CheckBox checkbox1Answer1 = (CheckBox) findViewById(R.id.chkIos);
-        CheckBox checkbox2Answer2 = (CheckBox) findViewById(R.id.chkIos2);
-        CheckBox checkbox3Answer3 = (CheckBox) findViewById(R.id.chkIos3);
+        RadioButton radio = (RadioButton) findViewById(R.id.question1Answer1);
+        CheckBox checkbox1 = (CheckBox) findViewById(R.id.checked1);
+        CheckBox checkbox2 = (CheckBox) findViewById(R.id.checked2);
+        CheckBox checkbox3 = (CheckBox) findViewById(R.id.checked3);
 
         if (textInput.getText().toString().equals("2")) {
             setPoint(1);
         }
 
-        if (question2Answer1.isChecked()) {
+        if (radio.isChecked()) {
             setPoint(1);
         }
 
-        if (checkbox1Answer1.isChecked() && !checkbox2Answer2.isChecked() && !checkbox3Answer3.isChecked()) {
+        if (checkbox1.isChecked() && !checkbox2.isChecked() && !checkbox3.isChecked()) {
             setPoint(1);
         }
         toaster("Your score: " + score.toString());

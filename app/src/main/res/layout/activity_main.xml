@@ -104,19 +104,19 @@
                 android:textSize="16sp" />
 
             <CheckBox
-                android:id="@+id/chkIos"
+                android:id="@+id/checked1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/answerC" />
 
             <CheckBox
-                android:id="@+id/chkIos2"
+                android:id="@+id/checked2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/answerC2" />
 
             <CheckBox
-                android:id="@+id/chkIos3"
+                android:id="@+id/checked3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/answerC3" />
